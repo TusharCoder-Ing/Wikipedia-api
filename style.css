@@ -1,0 +1,151 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /*poppins*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap'); /*Kanit*/
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap');/*Lexend*/
+
+
+/*Variables*/
+:root{
+    --main-accent : #89CFF0;/*Baby blue*/
+    --main-accent2 : #0096FF; /*Bright blue*/
+    --main-accent3 : #7DF9FF; /*Electric Blue*/
+}
+
+/*Animations*/
+@keyframes appear_transparent {
+    0%,25%{
+        opacity: 0%;
+    }
+    75%{
+        opacity: 50%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+/*Styling of Main page*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(
+        90deg,
+        var(--main-accent2),
+        var(--main-accent3),
+        var(--main-accent2)
+    );
+}
+#head{
+    text-align: center;
+    font-family: poppins;
+    animation: appear_transparent 2s 1 ease-in ;
+}
+#welcome{
+    font-size: 2em;
+    margin: 10px 0;
+    padding: 20px 20px;
+}
+#info{
+    font-size: 1.25em;
+    margin: 10px 0;
+    padding: 20px 20px;
+}
+#input-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+#button-wrapper{
+    display: flex;
+    justify-content: center;
+}
+#user-input{
+    width: 50vw;
+    max-width: 500px;
+    min-width: 150px;
+    outline-color: transparent;
+    border-color: transparent;
+    border-radius: 20px;
+    text-align: center;
+    border: var(--main-accent) 2px solid;
+    transition: all 0.5s;
+}
+#user-input::placeholder{
+    text-align: center;
+    font-family: lexend;
+}
+#user-input:focus , #user-input:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px 10px var(--main-accent);
+}
+#search{
+    border-color: transparent;
+    outline-color: transparent;
+    border-radius: 20px;
+    width: 10vw;
+    min-width: 50px;
+    max-width: 100px;
+    transition: all 0.5s;
+
+}
+#search:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px 10px var(--main-accent);
+    cursor: pointer;
+}
+#query{
+    display: none;
+}
+#query-title{
+    text-align: center;
+    font-family: kanit;
+    font-size: 2em;
+    margin: 50px 0;
+}
+#img-title{
+    text-align: center;
+    font-family: kanit;
+    font-size: 1.5em;
+    margin: 50px 0;
+}
+#img-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+img{
+    border-radius: 20px;
+    border-color: transparent;
+}
+#summary-title{
+    text-align: center;
+    font-family: kanit;
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+#summary{
+    text-align: center;
+    font-family: lexend;
+    font-size: 1.25em;
+    
+}
+#main{
+    width: 80%;
+    background-color: var(--main-accent);
+    margin: 50px auto;
+    border-radius: 20px;
+
+}
+
+@media (max-width:750px) {
+    img{
+        width: 250px;
+        border-radius: 20px;
+    }
+    
+}
