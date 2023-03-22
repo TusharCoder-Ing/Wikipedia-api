@@ -8,6 +8,8 @@ const img = document.querySelector('img')
 const summaryTitle = document.getElementById('summary-title')
 const summary = document.getElementById('summary')
 const toStyle = document.getElementById('main')
+const moreInfoWrapper = document.getElementById("more-wrapper")
+const moreInfo = document.getElementById("more")
 
 
 function titleCase(){
@@ -37,16 +39,18 @@ function fetchApi(){
       imgTitle.innerHTML = ``
       summaryTitle.innerHTML = ``
       summary.innerHTML = '' 
-      img.src = '' 
+      img.src = ''
     }
 
-    else if(response.thumbnail['source'] == ''){
+    else if(response.thumbnail == undefined){
       imgTitle.innerHTML = `No photos found for ${userInput}`
-      queryTitle.innerHTML = "Not Found Try Searching For Something Else"
+      queryTitle.innerHTML = `${userInput}`
+      summaryTitle.innerHTML = `About ${userInput}`
+      summary.innerHTML = response.extract
       imgTitle.innerHTML = ``
-      summaryTitle.innerHTML = ``
-      summary.innerHTML = '' 
       img.src = '' 
+      moreInfoWrapper.href = response.content_urls.desktop['page']
+      moreInfo.innerHTML = `More Info About ${userInput}`
       
    }
 
@@ -56,6 +60,8 @@ function fetchApi(){
       img.src = response.thumbnail['source']
       summaryTitle.innerHTML = `About ${userInput}:`
       summary.innerHTML = response.extract
+      moreInfoWrapper.href = response.content_urls.desktop['page']
+      moreInfo.innerHTML = `More Info About ${userInput}`
     }
     
    })

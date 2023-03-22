@@ -141,7 +141,12 @@ img{
     border-radius: 20px;
 
 }
-
+#more-container{
+    text-align: center;
+    margin: 50px;
+    font-family: lexend;
+    font-size: 1.15em;
+}
 @media (max-width:750px) {
     img{
         width: 250px;
